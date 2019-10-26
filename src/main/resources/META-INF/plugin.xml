@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>com.namespace.sort.namespace-sort-plugin</id>
     <name>Clojure Namespace Sort</name>
-    <vendor email="" url="">mustangJaro</vendor>
+    <vendor email="" url="https://github.com/mustangJaro/antandre">mustangJaro</vendor>
 
     <description>Sorts required namespaces in Clojure files</description>
 
