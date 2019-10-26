@@ -21,6 +21,6 @@ intellij {
 }
 patchPluginXml {
     changeNotes """
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>"""
+      This plugin includes a right-click menu option on Clojure/ClojureScript files
+      titled Sort Required Namespaces."""
 }
