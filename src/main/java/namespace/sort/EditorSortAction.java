@@ -26,15 +26,27 @@ public class EditorSortAction extends AnAction {
     private ArrayList<String> getRequiredNamespaces(String requireStatement){
         ArrayList<String> requires = new ArrayList<>();
         int startSearchIndex = 0;
+        String partialRequire = requireStatement;
         while(true){
-            int openBracketLoc = requireStatement.indexOf("[", startSearchIndex);
+            int openBracketLoc = partialRequire.indexOf("[", startSearchIndex);
             if(openBracketLoc < 0)
                 break;
-            int closeBracketLoc = requireStatement.indexOf("]", openBracketLoc);
-            if(closeBracketLoc < 0)
-                break;
-            requires.add(requireStatement.substring(openBracketLoc, closeBracketLoc + 1));
-
+            partialRequire = partialRequire.substring(openBracketLoc);
+            StringBuilder require = new StringBuilder();
+            boolean foundEndOfRequire = false;
+            int closeBracketLoc = 0, openBrackets = 0;
+            while(!foundEndOfRequire){
+                char c = partialRequire.charAt(closeBracketLoc);
+                if (c == '[')
+                    openBrackets++;
+                if (c == ']')
+                    openBrackets--;
+                require.append(c);
+                if (openBrackets == 0)
+                    foundEndOfRequire = true;
+                closeBracketLoc++;
+            }
+            requires.add(require.toString());
             startSearchIndex = closeBracketLoc;
         }
 
@@ -83,7 +95,7 @@ public class EditorSortAction extends AnAction {
                     StringBuilder requiredString = new StringBuilder("(:require");
                     for (String ns : requiredNamespaces){
                         requiredString
-                                .append("\n    ")
+                                .append("\n   ")
                                 .append(ns); // TODO(AJ) Add proper spacing here DocumentUtil
                     }
                     requiredString.append(")");
