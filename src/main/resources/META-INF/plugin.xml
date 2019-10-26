@@ -1,0 +1,23 @@
+<idea-plugin>
+    <id>com.namespace.sort.namespace-sort-plugin</id>
+    <name>Clojure Namespace Sort</name>
+    <vendor email="" url="">mustangJaro</vendor>
+
+    <description>Sorts required namespaces in Clojure files</description>
+
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+
+    <actions>
+        <action id="EditorSortAction"
+                class="namespace.sort.EditorSortAction"
+                text="Sort Required Namespaces"
+                description="Sorts the namespaces declared in the require reference within the ns macro"
+                icon="EditorIcons.sort_icon">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+    </actions>
+</idea-plugin>

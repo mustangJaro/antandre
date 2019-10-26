@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conversion>
+  <applied-converters>
+    <converter id="android-module-to-java-module" />
+    <converter id="android-proguard-options" />
+    <converter id="android-sdk-library" />
+    <converter id="groovy-modules-to-facets" />
+    <converter id="groovy-script-run-configurations" />
+    <converter id="junit-to-android-junit-configurations" />
+    <converter id="kotlin-non-jvm-source-roots" />
+  </applied-converters>
+  <project-files>
+    <file path="/private/var/folders/53/m54nhx1s4759pypvtlj0sv_m0000gn/T/socialcert_stats.clj/.idea/encodings.xml" timestamp="1572094490000" />
+    <file path="/private/var/folders/53/m54nhx1s4759pypvtlj0sv_m0000gn/T/socialcert_stats.clj/.idea/modules.xml" timestamp="1572094490000" />
+    <file path="/private/var/folders/53/m54nhx1s4759pypvtlj0sv_m0000gn/T/socialcert_stats.clj/.idea/socialcert_stats.clj.iml" timestamp="1572094490000" />
+    <file path="/private/var/folders/53/m54nhx1s4759pypvtlj0sv_m0000gn/T/socialcert_stats.clj/.idea/workspace.xml" timestamp="1572094550000" />
+  </project-files>
+</conversion>
+
