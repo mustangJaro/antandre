@@ -68,6 +68,7 @@ public class EditorSortAction extends AnAction {
                     StringBuilder namespace = new StringBuilder();
                     boolean foundEndOfNs = false;
                     int i = 0, openParans = 0, indexOfNamespace = -1;
+                    // TODO(AJ) There is something not parsing properly here when there is the reader conditional
                     while (!foundEndOfNs) {
                         char c = seq.charAt(i);
                         if (c == '(') {

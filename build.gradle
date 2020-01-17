@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'com.mustangJaro'
-version '1.1'
+version '1.2'
 
 sourceCompatibility = 1.8
 
@@ -17,14 +17,14 @@ dependencies {
 }
 
 intellij {
-    version '2018.3.4'
+    version '2019.3.1'
 }
 patchPluginXml {
     sinceBuild '183'
-    untilBuild '193'
+    untilBuild '194'
     changeNotes """
-        <h3>v1.1</h3>
-        Update to support IntelliJ builds from 183 to 193.
+        <h3>v1.2</h3>
+        Update to support IntelliJ builds from 183 to 194.
         <h3>v1.0</h3>
         This plugin includes a right-click menu option on Clojure/ClojureScript files
         titled Sort Required Namespaces."""
