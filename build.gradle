@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'com.mustangJaro'
-version '1.3'
+version '1.4'
 
 sourceCompatibility = 1.8
 
@@ -17,12 +17,14 @@ dependencies {
 }
 
 intellij {
-    version '2020.2.3'
+    version '2020.3'
 }
 patchPluginXml {
     sinceBuild '183'
-    untilBuild '202.*'
+    untilBuild '203.*'
     changeNotes """
+        <h3>v1.4</h3>
+        Update to new build versions.
         <h3>v1.3</h3>
         Update to new build versions.
         <h3>v1.2</h3>
@@ -31,3 +33,5 @@ patchPluginXml {
         This plugin includes a right-click menu option on Clojure/ClojureScript files
         titled Sort Required Namespaces."""
 }
+
+buildSearchableOptions.enabled = false
