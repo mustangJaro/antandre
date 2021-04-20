@@ -17,11 +17,11 @@ dependencies {
 }
 
 intellij {
-    version '2020.3'
+    version '2021.1'
 }
 patchPluginXml {
     sinceBuild '183'
-    untilBuild '203.*'
+    untilBuild '211.*'
     changeNotes """
         <h3>v1.4</h3>
         Update to new build versions.
