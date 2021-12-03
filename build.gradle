@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'com.mustangJaro'
-version '1.6'
+version '1.7'
 
 sourceCompatibility = 1.8
 
@@ -21,11 +21,12 @@ intellij {
 }
 patchPluginXml {
     sinceBuild '183'
-    untilBuild '212.*'
     pluginDescription """
         Integrates a context menu for Clojure files to sort any required namespaces. After opening
         a CLJ/CLJS file, right-click to select Sort Required Namespaces."""
     changeNotes """
+        <h3>v1.7</h3>
+        Update to new build versions.
         <h3>v1.4</h3>
         Update to new build versions.
         <h3>v1.3</h3>
