@@ -120,11 +120,12 @@ public class EditorSortAction extends AnAction {
     @Override
     public void update(@NotNull final AnActionEvent e) {
         // Get required data keys
-        final Project project = e.getProject();
         final Editor editor = e.getData(CommonDataKeys.EDITOR);
-        VirtualFile file = FileDocumentManager.getInstance().getFile(editor.getDocument());
+        if(editor != null && e.getProject() != null) {
+            VirtualFile file = FileDocumentManager.getInstance().getFile(editor.getDocument());
 
-        // Set visibility and enable only in case of existing project and editor and if a selection exists
-        e.getPresentation().setEnabledAndVisible( project != null && editor != null && extensions.contains(file.getExtension()));
+            // Set visibility and enable only in case of existing project and editor and if a selection exists
+            e.getPresentation().setEnabledAndVisible(file != null && extensions.contains(file.getExtension()));
+        }
     }
 }

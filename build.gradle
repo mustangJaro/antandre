@@ -17,7 +17,7 @@ dependencies {
 }
 
 intellij {
-    version '2021.2'
+    version '2021.3'
 }
 patchPluginXml {
     sinceBuild '183'
@@ -27,6 +27,7 @@ patchPluginXml {
     changeNotes """
         <h3>v1.7</h3>
         Update to new build versions.
+        Fix NPE on update call
         <h3>v1.4</h3>
         Update to new build versions.
         <h3>v1.3</h3>
