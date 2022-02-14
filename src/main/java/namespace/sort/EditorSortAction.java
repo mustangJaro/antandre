@@ -16,6 +16,9 @@ import java.util.Arrays;
 
 public class EditorSortAction extends AnAction {
 
+    private String nonNewlineSpacing = "            ";
+    private String newlineSpacing = "   ";
+
     /**
      * Returns an ArrayList of required namespaces given a fully-formed
      * require statement.
@@ -66,6 +69,7 @@ public class EditorSortAction extends AnAction {
                 {
                     CharSequence seq = document.getCharsSequence();
                     StringBuilder namespace = new StringBuilder();
+                    boolean newlineRequired  = AppSettingsState.getInstance().newlineRequired;
                     boolean foundEndOfNs = false;
                     int i = 0, openParans = 0, indexOfNamespace = -1;
                     // TODO(AJ) There is something not parsing properly here when there is the reader conditional
@@ -93,11 +97,21 @@ public class EditorSortAction extends AnAction {
                     requiredNamespaces.sort(null);
 
                     // Convert ArrayList back to String
+                    String baseSpacing = newlineSpacing;
                     StringBuilder requiredString = new StringBuilder("(:require");
-                    for (String ns : requiredNamespaces){
+                    if (newlineRequired) {
+                        requiredString.append("\n");
+                    } else {
+                        baseSpacing = nonNewlineSpacing; //reset base spacing for longer line
+                    }
+
+                    String firstAppend = newlineRequired ? baseSpacing : " ";
+
+                    for (int j = 0; j < requiredNamespaces.size() ; j++){
                         requiredString
-                                .append("\n   ")
-                                .append(ns); // TODO(AJ) Add proper spacing here DocumentUtil
+                                .append(j == 0 ? firstAppend : baseSpacing)
+                                .append(requiredNamespaces.get(j))
+                                .append(j == requiredNamespaces.size() - 1 ? "" : "\n");
                     }
                     requiredString.append(")");
 

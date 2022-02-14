@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'com.mustangJaro'
-version '1.7'
+version '1.8'
 
 sourceCompatibility = 1.8
 
@@ -25,15 +25,10 @@ patchPluginXml {
         Integrates a context menu for Clojure files to sort any required namespaces. After opening
         a CLJ/CLJS file, right-click to select Sort Required Namespaces."""
     changeNotes """
+        <h3>v1.8</h3>
+        Add Settings for newline configuration.
         <h3>v1.7</h3>
         Update to new build versions.
-        Fix NPE on update call
-        <h3>v1.4</h3>
-        Update to new build versions.
-        <h3>v1.3</h3>
-        Update to new build versions.
-        <h3>v1.2</h3>
-        Update to support IntelliJ builds from 183 to 194.
         <h3>v1.0</h3>
         This plugin includes a right-click menu option on Clojure/ClojureScript files
         titled Sort Required Namespaces."""
