@@ -20,7 +20,7 @@ intellij {
     version '2021.3'
 }
 patchPluginXml {
-    sinceBuild '183'
+    sinceBuild '193'
     pluginDescription """
         Integrates a context menu for Clojure files to sort any required namespaces. After opening
         a CLJ/CLJS file, right-click to select Sort Required Namespaces."""
